@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGO_DB, {
+mongoose.connect('mongodb://root:example@localhost:27017/Biblioteca?authSource=admin&authMechanism=SCRAM-SHA-256', {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_DB, {
 const LibroSchema = new mongoose.Schema({
   titulo: String,
   autor: String
-}, { collection: 'libros' });
+}, { collection: 'Libros' });
 
 const Libro = mongoose.model('Libro', LibroSchema);
 
