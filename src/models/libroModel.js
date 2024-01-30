@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect('mongodb://root:example@localhost:27017/Biblioteca?authSource=admin&authMechanism=SCRAM-SHA-256', {
+mongoose.connect(process.env.MONGO_DB, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
